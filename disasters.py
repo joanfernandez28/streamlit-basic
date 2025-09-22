@@ -14,7 +14,7 @@ mpg = alt.Chart(disasters).mark_point().encode(
     alt.X('Year:N'),
     alt.Y('Deaths'),
     color='Entity',
-    tooltip=['Entity', 'Deaths']
+    tooltip=['Entity', 'Deaths', 'Year']
 ).interactive()
 
 chart = mpg
