@@ -3,8 +3,9 @@ import streamlit as st
 
 disasters = st.Page("disasters.py", title="Disasters", icon=":material/add_circle:")
 cars = st.Page("cars.py", title="Cars", icon=":material/add_circle:")
+jobs = st.Page("jobs.py", title="Jobs", icon=":material/add_circle:")
 
-pg = st.navigation([disasters,cars])
+pg = st.navigation([disasters,cars, jobs])
 st.set_page_config(
     page_title="Streamlit | Joan",
     page_icon="J",
