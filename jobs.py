@@ -21,14 +21,17 @@ sja = alt.Chart(jobs).mark_bar().encode(
     tooltip=['sex', 'job']
 ).interactive()
 
-jsp = alt.Chart(jobs).mark_bar().encode(
-    alt.X('job'),
-    alt.Y('perc'),
-    tooltip=['sex', 'job']
+jsp = alt.Chart(jobs).mark_tick().encode(
+    alt.X('year:N'),
+    alt.Y('average(perc)'),
+    tooltip=['sex', 'job', 'year']
 ).interactive()
 
 chart = mpg
 st.altair_chart(chart)
 
 chart = sja
+st.altair_chart(chart)
+
+chart = jsp
 st.altair_chart(chart)
