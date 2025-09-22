@@ -1,21 +1,14 @@
 import streamlit as st
-import altair as alt
-import vega_datasets
 
-@st.cache_data
-def load_data():
-    return vega_datasets.data.cars()
 
-cars = load_data()
+disasters = st.Page("disasters.py", title="Disasters", icon=":material/add_circle:")
+cars = st.Page("cars.py", title="Cars", icon=":material/add_circle:")
 
-st.write(cars)
+pg = st.navigation([disasters,cars])
+st.set_page_config(
+    page_title="Streamlit | Joan",
+    page_icon="J",
+    initial_sidebar_state="expanded"
+)
 
-mpg = alt.Chart(cars).mark_point().encode(
-    alt.X('Weight_in_lbs'),
-    alt.Y('Displacement'),
-    color='Origin',
-    tooltip=['Name', 'Origin']
-).interactive()
-
-chart = mpg
-st.altair_chart(chart)
+pg.run()
