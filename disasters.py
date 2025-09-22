@@ -11,7 +11,7 @@ disasters = load_data()
 st.write(disasters)
 
 mpg = alt.Chart(disasters).mark_point().encode(
-    alt.X('Year:T'),
+    alt.X('Year'),
     alt.Y('Deaths'),
     color='Entity',
     tooltip=['Entity', 'Deaths']
