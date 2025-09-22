@@ -16,3 +16,6 @@ mpg = alt.Chart(disasters).mark_point().encode(
     color='Entity',
     tooltip=['Entity', 'Deaths']
 ).interactive()
+
+chart = mpg
+st.altair_chart(chart)
